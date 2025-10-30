@@ -1,0 +1,1 @@
+Solutions for exercises from [Exercism - Python](https://exercism.org/tracks/python).
