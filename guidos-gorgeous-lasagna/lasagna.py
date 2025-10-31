@@ -10,8 +10,7 @@ of a module and its functions and/or classes.
 EXPECTED_BAKE_TIME = 40
 
 
-# TODO: Remove 'pass' and complete the 'bake_time_remaining()' function below.
-def bake_time_remaining():
+def bake_time_remaining(elapsed_bake_time: int) -> int:
     """Calculate the bake time remaining.
 
     :param elapsed_bake_time: int - baking time already elapsed.
@@ -21,7 +20,7 @@ def bake_time_remaining():
     an argument and returns how many minutes the lasagna still needs to bake
     based on the 'EXPECTED_BAKE_TIME'.
     """
-    pass
+    return EXPECTED_BAKE_TIME - elapsed_bake_time
 
 
 # TODO: Define the 'preparation_time_in_minutes()' function below.
