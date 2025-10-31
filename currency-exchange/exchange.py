@@ -58,13 +58,16 @@ def get_number_of_bills(amount: float, denomination: int) -> int:
 
 
 def get_leftover_of_bills(amount: float, denomination: int) -> float:
-    """
+    """Calculates the amount of money booth keeps to themselfs.
 
     :param amount: float - the total starting value.
     :param denomination: int - the value of a single bill.
     :return: float - the amount that is "leftover", given the current denomination.
+
+    Function that takes amount of money and denomination, and returns the remainder
+    of dividing amount by denomination.
     """
-    pass
+    return amount % denomination
 
 
 def exchangeable_value(
@@ -78,4 +81,7 @@ def exchangeable_value(
     :param denomination: int - the value of a single bill.
     :return: int - maximum value you can get.
     """
-    pass
+    exchange_rate += exchange_rate * spread / 100
+    exchanged_money = exchange_money(budget, exchange_rate)
+    number_of_bills = get_number_of_bills(exchanged_money, denomination)
+    return get_value_of_bills(denomination, number_of_bills)
