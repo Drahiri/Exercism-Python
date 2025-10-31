@@ -7,7 +7,7 @@ This is a module docstring, used to describe the functionality
 of a module and its functions and/or classes.
 """
 
-# TODO: define your EXPECTED_BAKE_TIME (required) and PREPARATION_TIME (optional) constants below.
+EXPECTED_BAKE_TIME = 40
 
 
 # TODO: Remove 'pass' and complete the 'bake_time_remaining()' function below.
