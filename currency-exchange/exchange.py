@@ -19,13 +19,16 @@ def exchange_money(budget: float, exchange_rate: float) -> float:
 
 
 def get_change(budget: float, exchanging_value: float) -> float:
-    """
+    """Calculates amount of money left after exchange.
 
     :param budget: float - amount of money you own.
     :param exchanging_value: float - amount of your money you want to exchange.
     :return: float - amount left of your starting currency after exchanging.
+
+    Function that takes amount to money to be exchange and how much money has been
+    exchanged, and returns how much money remain.
     """
-    pass
+    return budget - exchanging_value
 
 
 def get_value_of_bills(denomination: int, number_of_bills: int) -> int:
