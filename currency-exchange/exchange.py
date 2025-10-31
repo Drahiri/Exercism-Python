@@ -5,13 +5,17 @@ Python numbers documentation: https://docs.python.org/3/library/stdtypes.html#nu
 
 
 def exchange_money(budget: float, exchange_rate: float) -> float:
-    """
+    """Calculates amount of exchanged money in foreign currency.
 
     :param budget: float - amount of money you are planning to exchange.
     :param exchange_rate: float - unit value of the foreign currency.
     :return: float - exchanged value of the foreign currency you can receive.
+
+    Function that takes amount of money to be exchange and exchange rate as arguments,
+    and returns the value of foreign currency you can receive.
+    Exchange rate defines how much you must spent to receive 1 unit of foreign currency.
     """
-    pass
+    return budget / exchange_rate
 
 
 def get_change(budget: float, exchanging_value: float) -> float:
