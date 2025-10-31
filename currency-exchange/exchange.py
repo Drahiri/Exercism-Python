@@ -32,13 +32,16 @@ def get_change(budget: float, exchanging_value: float) -> float:
 
 
 def get_value_of_bills(denomination: int, number_of_bills: int) -> int:
-    """
+    """Calculates the value of bills.
 
     :param denomination: int - the value of a bill.
     :param number_of_bills: int - total number of bills.
     :return: int - calculated value of bills.
+
+    Function that takes denomination and number of bills, and returns value
+    of bills.
     """
-    pass
+    return denomination * number_of_bills
 
 
 def get_number_of_bills(amount: float, denomination: int) -> int:
