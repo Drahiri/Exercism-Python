@@ -8,6 +8,7 @@ of a module and its functions and/or classes.
 """
 
 EXPECTED_BAKE_TIME = 40
+PREPARATION_TIME = 2
 
 
 def bake_time_remaining(elapsed_bake_time: int) -> int:
@@ -23,11 +24,16 @@ def bake_time_remaining(elapsed_bake_time: int) -> int:
     return EXPECTED_BAKE_TIME - elapsed_bake_time
 
 
-# TODO: Define the 'preparation_time_in_minutes()' function below.
-# To avoid the use of magic numbers (see: https://en.wikipedia.org/wiki/Magic_number_(programming)), you
-# should define a PREPARATION_TIME constant.
-# You can do that on the line below the 'EXPCTED_BAKE_TIME' constant.
-# This will make it easier to do calculations, and make changes to your code.
+def preparation_time_in_minutes(number_of_layers: int) -> int:
+    """Calculate the preparation time.
+
+    :param number_of_layers: int - number of layers to prepare.
+    :return: int - time needed for preparation (in minutes) derived from 'PREPARATION_TIME'
+
+    Function that takes number of layers in lasagna as an argument and returns
+    how many minutes is needed to prepare them all based on 'PREPARATION_TIME'.
+    """
+    return PREPARATION_TIME * number_of_layers
 
 
 # TODO: define the 'elapsed_time_in_minutes()' function below.
