@@ -45,13 +45,16 @@ def get_value_of_bills(denomination: int, number_of_bills: int) -> int:
 
 
 def get_number_of_bills(amount: float, denomination: int) -> int:
-    """
+    """Calculated number of received bills.
 
     :param amount: float - the total starting value.
     :param denomination: int - the value of a single bill.
     :return: int - number of bills that can be obtained from the amount.
+
+    Function that takes amount of money and denomination, and returns
+    how many bills you will receive.
     """
-    pass
+    return int(amount // denomination)
 
 
 def get_leftover_of_bills(amount: float, denomination: int) -> float:
