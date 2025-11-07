@@ -6,4 +6,4 @@ def square(number: int) -> int:
 
 
 def total() -> int:
-    pass
+    return (1 << 64) - 1
