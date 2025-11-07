@@ -1,5 +1,5 @@
 def square(number: int) -> int:
-    pass
+    return 1 << number - 1
 
 
 def total() -> int:
