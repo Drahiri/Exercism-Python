@@ -8,7 +8,7 @@ def eat_ghost(power_pellet_active: bool, touching_ghost: bool) -> bool:
     :param touching_ghost: bool - is the player touching a ghost?
     :return: bool - can a ghost be  eaten?
     """
-    pass
+    return power_pellet_active and touching_ghost
 
 
 def score(touching_power_pellet: bool, touching_dot: bool) -> bool:
