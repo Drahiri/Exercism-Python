@@ -12,13 +12,13 @@ def eat_ghost(power_pellet_active: bool, touching_ghost: bool) -> bool:
 
 
 def score(touching_power_pellet: bool, touching_dot: bool) -> bool:
-    """Verify that Pac-Man has scored when a power pellet or dot has benn eaten.
+    """Verify that Pac-Man has scored when a power pellet or dot has been eaten.
 
     :param touching_power_pellet: bool - is the player touching a power pellet?
     :param touching_dot: bool - is the player touching a dot?
     :param: bool - has the player scored of not?
     """
-    pass
+    return touching_power_pellet or touching_dot
 
 
 def lose(power_pellet_active: bool, touching_ghost: bool) -> bool:
