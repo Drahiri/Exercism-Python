@@ -1,7 +1,9 @@
 """Functions to prevent a nuclear meltdown."""
 
 
-def is_criticality_balanced(temperature, neutrons_emitted):
+def is_criticality_balanced(
+    temperature: int | float, neutrons_emitted: int | float
+) -> bool:
     """Verify criticality is balanced.
 
     :param temperature: int or float - temperature value in kelvin.
@@ -13,7 +15,11 @@ def is_criticality_balanced(temperature, neutrons_emitted):
     - The number of neutrons emitted per second is greater than 500.
     - The product of temperature and neutrons emitted per second is less than 500000.
     """
-    pass
+    return (
+        temperature < 800
+        and neutrons_emitted > 500
+        and temperature * neutrons_emitted < 500_000
+    )
 
 
 def reactor_efficiency(voltage, current, theorecical_max_power):
