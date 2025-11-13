@@ -1,10 +1,31 @@
+def is_triangle(sides: list[int | float]) -> bool:
+    """Checks if sides can create triangle.
+
+    :param sides: list[int | float] - list of triangle sides.
+    :return: bool - can sides create triangle?
+    """
+    if any(side <= 0 for side in sides):
+        return False
+
+    if (
+        sides[0] + sides[1] < sides[2]
+        or sides[0] + sides[2] < sides[1]
+        or sides[1] + sides[2] < sides[0]
+    ):
+        return False
+
+    return True
+
+
 def equilateral(sides: list[int | float]) -> bool:
     """Checks if triangle is equilateral (all sides same length).
 
     :param sides: list[int | float] - list of sides.
     :return: bool - is triangle equilateral?
     """
-    return sides[0] == sides[1] and sides[0] == sides[2] if sides[0] > 0 else False
+    return (
+        sides[0] == sides[1] and sides[0] == sides[2] if is_triangle(sides) else False
+    )
 
 
 def isosceles(sides: list[int | float]) -> bool:
@@ -13,17 +34,11 @@ def isosceles(sides: list[int | float]) -> bool:
     :param sides: list[int | float] - list of sides.
     :return: bool - is triangle isosceles?
     """
-    if any(side <= 0 for side in sides):
-        return False
-
-    if (
-        sides[0] + sides[1] < sides[2]
-        or sides[0] + sides[2] < sides[1]
-        or sides[1] + sides[2] < sides[0]
-    ):
-        return False
-
-    return sides[0] == sides[1] or sides[0] == sides[2] or sides[1] == sides[2]
+    return (
+        sides[0] == sides[1] or sides[0] == sides[2] or sides[1] == sides[2]
+        if is_triangle(sides)
+        else False
+    )
 
 
 def scalene(sides: list[int | float]) -> bool:
@@ -32,14 +47,4 @@ def scalene(sides: list[int | float]) -> bool:
     :param sides: list[int | float] - list of sides.
     :return: bool - is triangle scalene?
     """
-    if any(side <= 0 for side in sides):
-        return False
-
-    if (
-        sides[0] + sides[1] < sides[2]
-        or sides[0] + sides[2] < sides[1]
-        or sides[1] + sides[2] < sides[0]
-    ):
-        return False
-
-    return not (isosceles(sides) or equilateral(sides))
+    return not (isosceles(sides) or equilateral(sides)) if is_triangle(sides) else False
