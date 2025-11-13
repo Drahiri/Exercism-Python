@@ -8,7 +8,22 @@ def equilateral(sides: list[int | float]) -> bool:
 
 
 def isosceles(sides: list[int | float]) -> bool:
-    return False
+    """Checks if triangle is isosceles (two sides same length).
+
+    :param sides: list[int | float] - list of sides.
+    :return: bool - is triangle isosceles?
+    """
+    if any(side <= 0 for side in sides):
+        return False
+
+    if (
+        sides[0] + sides[1] < sides[2]
+        or sides[0] + sides[2] < sides[1]
+        or sides[1] + sides[2] < sides[0]
+    ):
+        return False
+
+    return sides[0] == sides[1] or sides[0] == sides[2] or sides[1] == sides[2]
 
 
 def scalene(sides: list[int | float]) -> bool:
