@@ -99,7 +99,7 @@ class MeltdownMitigationTest(unittest.TestCase):
         threshold = 10000
         test_data = (
             (399, "LOW"),
-            (300, "LOw"),
+            (300, "LOW"),
             (1, "LOW"),
             (0, "LOW"),
             (901, "NORMAL"),
