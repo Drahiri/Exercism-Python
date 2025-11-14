@@ -13,11 +13,10 @@ def response(hey_bob: str) -> str:
     - "Whatever" - on any other statement.
     """
     statement = hey_bob.strip()
-    response = ""
 
     if not statement:
         response = "Fine. Be that way!"
-    elif statement.upper() == statement:
+    elif statement.upper() == statement and any(c.isalpha() for c in statement):
         if statement[-1] == "?":
             response = "Calm down, I know what I'm doing!"
         else:
