@@ -53,7 +53,7 @@ class BobTest(unittest.TestCase):
         )
 
     def test_shouting_with_no_exclamation_mark(self):
-        self.assertEqual(response("I HATE THE DENTIST"), "Whoa, chill  out!")
+        self.assertEqual(response("I HATE THE DENTIST"), "Whoa, chill out!")
 
     def test_statement_containing_question_mark(self):
         self.assertEqual(response("Ending with ? means a question."), "Whatever.")
