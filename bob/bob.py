@@ -17,5 +17,7 @@ def response(hey_bob: str) -> str:
 
     if not statement:
         response = "Fine. Be that way!"
+    elif statement.upper() == statement:
+        response = "Whoa, chill out!"
 
     return response
