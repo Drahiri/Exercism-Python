@@ -12,4 +12,10 @@ def response(hey_bob: str) -> str:
     - "Fine. Be that way!" - on empty or only whitespace statements.
     - "Whatever" - on any other statement.
     """
-    pass
+    statement = hey_bob.strip()
+    response = ""
+
+    if not statement:
+        response = "Fine. Be that way!"
+
+    return response
