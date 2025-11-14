@@ -57,7 +57,11 @@ def reactor_efficiency(
     return band
 
 
-def fail_safe(temperature, neutrons_produced_per_second, threshold):
+def fail_safe(
+    temperature: int | float,
+    neutrons_produced_per_second: int | float,
+    threshold: int | float,
+) -> str:
     """Assess and return status code for the reactor.
 
     :param temperature: int or float - value of the temperature in kelvin.
@@ -65,8 +69,17 @@ def fail_safe(temperature, neutrons_produced_per_second, threshold):
     :param threshold: int or float - threshold of category.
     :return: str - one of ('LOW', 'NORMAL', 'DANGER').
 
-    1. 'LOW' -> `temperature * neutrons per second` < 90% of `threshold
-    2. 'NORMAL' -> `temperature * neutrons per second` +/- 10% of `threshold
-    3. 'DANGER' -> `temperature * neutrons per second` is not in the above-stated ranges
+    1. 'LOW' -> `temperature * neutrons per second` < 90% of `threshold`.
+    2. 'NORMAL' -> `temperature * neutrons per second` +/- 10% of `threshold`.
+    3. 'DANGER' -> `temperature * neutrons per second` is not in the above-stated ranges.
     """
-    pass
+    status_code = "DANGER"
+    temp_neut = temperature * neutrons_produced_per_second
+    percent_threshold = 0.1 * threshold
+
+    if temp_neut < 0.9 * threshold:
+        status_code = "LOW"
+    elif threshold - percent_threshold < temp_neut < threshold + percent_threshold:
+        status_code = "NORMAL"
+
+    return status_code
