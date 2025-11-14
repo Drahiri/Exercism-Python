@@ -24,5 +24,7 @@ def response(hey_bob: str) -> str:
             response = "Whoa, chill out!"
     elif statement[-1] == "?":
         response = "Sure."
+    else:
+        response = "Whatever."
 
     return response
