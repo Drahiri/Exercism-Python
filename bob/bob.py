@@ -1,5 +1,5 @@
 def response(hey_bob: str) -> str:
-    """Bobs' response to statement.
+    """Bob's response to statement.
 
     :param hey_bob: str - statement.
     :return: str - reply.
