@@ -9,6 +9,9 @@ def translate(text: str) -> str:
         index = 0
         while text[index] not in vowels:
             index += 1
+        # Rule 3
+        if text[index - 1 : index + 1] == "qu":
+            index += 1
 
         text = text[index:] + text[:index] + "ay"
 
