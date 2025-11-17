@@ -1,9 +1,8 @@
 def translate(text: str) -> str:
     vowels = ["a", "e", "i", "o", "u"]
-    text_list = text.split()
     changed_words = []
 
-    for word in text_list:
+    for word in text.split():
         # Rule 1
         if word[0] in vowels or word[:2] in ["xr", "yt"]:
             changed_words.append(word + "ay")
