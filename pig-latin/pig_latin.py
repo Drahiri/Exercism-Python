@@ -9,7 +9,7 @@ def translate(text: str) -> str:
                 index += 1
             while word[index] not in [*vowels, "y"]:
                 index += 1
-            if word[index - 1 : index + 1] == "qu":
+            if word[index - 1] + word[index] == "qu":
                 index += 1
 
             word = word[index:] + word[:index]
