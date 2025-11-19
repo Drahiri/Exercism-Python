@@ -55,7 +55,7 @@ def value_of_ace(card_one: str, card_two: str) -> int:
     return ace_as_11 if ("A" not in [card_one, card_two] and amount <= 21) else 1
 
 
-def is_blackjack(card_one, card_two):
+def is_blackjack(card_one: str, card_two: str) -> bool:
     """Determine if the hand is a 'natural' or 'blackjack'.
 
     :param card_one, card_two: str - card dealt. See below for values.
@@ -65,7 +65,12 @@ def is_blackjack(card_one, card_two):
     2. 'A' (ace card) = 11 (if already in hand)
     3. '2' - '10' = numerical value.
     """
-    pass
+    ten_value_cards = ["10", "J", "Q", "K"]
+    return (
+        card_one in ten_value_cards or card_two in ten_value_cards
+        if card_one == "A" or card_two == "A"
+        else False
+    )
 
 
 def can_split_pairs(card_one, card_two):
