@@ -1,4 +1,18 @@
 def translate(text: str) -> str:
+    """Changes text into pil latin.
+
+    :param text: str - text to translate.
+    :return: str - translated text.
+
+    Pig latin follows the following rules:
+    * if word starts with a vowel, 'xr' or 'yt' - add 'ay' to the end.
+    * if starts with consonant - move all consonants until first vowel to the end
+     and add 'ay' to the end.
+    * if starts with consonant followed by 'qu' - move preceeding consonants and 'qu'
+     to end and add 'ay'.
+    * if starts with constonant followed by 'y' - move preceeding consonants to the end
+     and add 'ay' to the end.
+    """
     vowels = ["a", "e", "i", "o", "u"]
     changed_words = []
 
