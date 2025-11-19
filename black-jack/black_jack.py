@@ -5,7 +5,7 @@ How to play blackjack: https://bicyclecards.com/how-to-play/blackjack/
 """
 
 
-def value_of_card(card):
+def value_of_card(card: str) -> int:
     """Determine the scoring value of a card.
 
     :param card: str - given card.
@@ -15,7 +15,8 @@ def value_of_card(card):
     2. 'A' (ace card) = 1
     3. '2' - '10' = numerical value.
     """
-    pass
+    face_cards = {"A": 1, "J": 10, "Q": 10, "K": 10}
+    return face_cards[card] if card in face_cards else int(card)
 
 
 def higher_card(card_one, card_two):
