@@ -39,7 +39,7 @@ def higher_card(card_one: str, card_two: str) -> str | tuple[str, str]:
     )
 
 
-def value_of_ace(card_one, card_two):
+def value_of_ace(card_one: str, card_two: str) -> int:
     """Calculate the most advantageous value for the ace card.
 
     :param card_one, card_two: str - card dealt. See below for values.
@@ -49,7 +49,10 @@ def value_of_ace(card_one, card_two):
     2. 'A' (ace card) = 11 (if already in hand)
     3. '2' - '10' = numerical value.
     """
-    pass
+    ace_as_11 = 11
+    amount = value_of_card(card_one) + value_of_card(card_two) + ace_as_11
+
+    return ace_as_11 if ("A" not in [card_one, card_two] and amount <= 21) else 1
 
 
 def is_blackjack(card_one, card_two):
