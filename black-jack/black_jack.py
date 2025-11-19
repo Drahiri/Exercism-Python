@@ -19,7 +19,7 @@ def value_of_card(card: str) -> int:
     return face_cards[card] if card in face_cards else int(card)
 
 
-def higher_card(card_one, card_two):
+def higher_card(card_one: str, card_two: str) -> str | tuple[str, str]:
     """Determine which card has a higher value in the hand.
 
     :param card_one, card_two: str = cards dealt in hand. See below for values.
@@ -29,7 +29,14 @@ def higher_card(card_one, card_two):
     2. 'A' (ace card) = 1
     3. '2' - '10' = numerical value.
     """
-    pass
+    value_one = value_of_card(card_one)
+    value_two = value_of_card(card_two)
+
+    return (
+        (card_one, card_two)
+        if value_one == value_two
+        else (card_one if value_one > value_two else card_two)
+    )
 
 
 def value_of_ace(card_one, card_two):
