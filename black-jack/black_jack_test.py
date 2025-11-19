@@ -129,7 +129,7 @@ class BlackJackTest(unittest.TestCase):
             (("6", "6"), True),
             (("A", "A"), True),
             (("10", "A"), False),
-            (("10", "9")),
+            (("10", "9"), False),
         ]
 
         for variant, (hand, expected) in enumerate(test_data, 1):
