@@ -15,8 +15,11 @@ def classify(number: int) -> str:
                 divisors_sum += number // i
     divisors_sum -= number
 
-    classification = ""
     if divisors_sum == number:
         classification = "perfect"
+    elif divisors_sum > number:
+        classification = "abundant"
+    else:
+        classification = "deficient"
 
     return classification
