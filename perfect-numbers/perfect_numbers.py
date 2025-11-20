@@ -7,6 +7,9 @@ def classify(number: int) -> str:
     :param number: int a positive integer
     :return: str the classification of the input integer
     """
+    if number is float or number <= 0:
+        raise ValueError("Classification is only possible for positive integers.")
+
     divisors_sum = 0
     for i in range(1, int(math.sqrt(number)) + 1):
         if number % i == 0:
