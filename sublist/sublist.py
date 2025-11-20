@@ -7,11 +7,9 @@ SUPERLIST = 3
 def check_contain_sublist(list_one: list, list_two: list) -> bool:
     len_one = len(list_one)
     len_two = len(list_two)
-    for i in range(len_one - len_two + 1):
-        if list_one[i : i + len_two] == list_two:
-            return True
-
-    return False
+    return any(
+        list_one[i : i + len_two] == list_two for i in range(len_one - len_two + 1)
+    )
 
 
 def sublist(list_one: list, list_two: list) -> int:
