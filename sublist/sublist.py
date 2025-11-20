@@ -4,18 +4,26 @@ SUBLIST = 2
 SUPERLIST = 3
 
 
+def check_contain_sublist(list_one: list, list_two: list) -> bool:
+    len_one = len(list_one)
+    len_two = len(list_two)
+    for i in range(len_one - len_two + 1):
+        if list_one[i : i + len_two] == list_two:
+            return True
+
+    return False
+
+
 def sublist(list_one: list, list_two: list) -> int:
     value = UNEQUAL
 
     if list_one == list_two:
         value = EQUAL
     elif len(list_one) > len(list_two):
-        for i in range(len(list_one) - len(list_two) + 1):
-            if list_one[i : i + len(list_two)] == list_two:
-                value = SUPERLIST
-    elif len(list_one) < len(list_two):
-        for i in range(len(list_two) - len(list_one) + 1):
-            if list_two[i : i + len(list_one)] == list_one:
-                value = SUBLIST
+        if check_contain_sublist(list_one, list_two):
+            value = SUPERLIST
+    else:
+        if check_contain_sublist(list_two, list_one):
+            value = SUBLIST
 
     return value
