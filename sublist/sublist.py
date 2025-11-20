@@ -1,7 +1,7 @@
-SUBLIST = None
-SUPERLIST = None
-EQUAL = None
-UNEQUAL = None
+EQUAL = 0
+UNEQUAL = 1
+SUBLIST = 2
+SUPERLIST = 3
 
 
 def sublist(list_one, list_two):
