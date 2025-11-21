@@ -29,13 +29,13 @@ class AllYourBaseTest(unittest.TestCase):
         self.assertEqual(rebase(97, [3, 46, 60], 73), [6, 10, 45])
 
     def test_empty_list(self):
-        self.assertEqual(rebase(2, [0], 10), [0])
+        self.assertEqual(rebase(2, [], 10), [0])
 
     def test_single_zero(self):
         self.assertEqual(rebase(10, [0], 2), [0])
 
     def test_multiple_zero(self):
-        self.assertEqual(rebase(10, [0, 0, 0], 2), [])
+        self.assertEqual(rebase(10, [0, 0, 0], 2), [0])
 
     def test_leading_zeros(self):
         self.assertEqual(rebase(7, [0, 6, 0], 10), [4, 2])
