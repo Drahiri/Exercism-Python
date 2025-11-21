@@ -1,4 +1,11 @@
-def rebase(input_base, digits, output_base):
+def rebase(input_base: int, digits: list[int], output_base: int) -> list[int]:
+    """Changes number from one base to another base.
+
+    :param input_base: int - base in which `digits` are.
+    :param digits: list[int] - digits in `input_base` to rebase.
+    :param output_base: int - base to which rebase `digits`.
+    :return: list[int] - digits that make rebased number.
+    """
     if input_base < 2 or output_base < 2:
         raise ValueError(f"{'input' if input_base < 2 else 'output'} base must be >= 2")
 
