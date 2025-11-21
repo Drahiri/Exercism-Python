@@ -1,4 +1,9 @@
 def is_valid(isbn: str) -> bool:
+    """Verify if isbn is correct ISBN-10.
+
+    :param isbn: str - isbn to check.
+    :return: bool - is isbn valid ISBN-10?
+    """
     without_dashes = "".join(isbn.split("-"))
 
     if len(without_dashes) != 10:
