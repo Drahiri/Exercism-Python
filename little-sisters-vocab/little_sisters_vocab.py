@@ -40,11 +40,11 @@ def remove_suffix_ness(word: str) -> str:
     return without_suffix
 
 
-def adjective_to_verb(sentence, index):
+def adjective_to_verb(sentence: str, index: int) -> str:
     """Change the adjective within the sentence to a verb.
 
     :param sentence: str - that uses the word in sentence.
     :param index: int - index of the word to remove the transform.
     :return: str - word that changes the extracted adjective tp a verb.
     """
-    pass
+    return sentence.removesuffix(".").split()[index] + "en"
