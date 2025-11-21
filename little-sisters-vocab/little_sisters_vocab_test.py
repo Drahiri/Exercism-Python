@@ -173,6 +173,7 @@ class LittleSistersVocabTest(unittest.TestCase):
             "Look at the bright sky.",
             "His expression went dark.",
             "The bread got hard after sitting out.The butter got soft in the sun.",
+            "The butter got soft in the sun.",
             "Her eyes were light blue.",
             "The morning for made everything damp with mist.",
             "He cut the fence pickets short by mistake."
