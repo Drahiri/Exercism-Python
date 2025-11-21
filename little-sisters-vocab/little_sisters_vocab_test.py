@@ -72,7 +72,7 @@ class LittleSistersVocabTest(unittest.TestCase):
         ]
         expected = (
             "pre :: preserve :: predispose :: preposition :: prerequisite :: "
-            "predigest :: prenatal :: preaddressed :: preadolescent :: preassumtion :: "
+            "predigest :: prenatal :: preaddressed :: preadolescent :: preassumption :: "
             "premature :: precompute"
         )
 
