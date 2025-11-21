@@ -1,13 +1,13 @@
 """Functions for creating, transforming, and adding prefixes to strings."""
 
 
-def add_prefix_un(word):
+def add_prefix_un(word: str) -> str:
     """Take the given word and add the 'un' prefix.
 
     :param word: str - containing the root word.
     :return: str - of root word prepended with 'un'
     """
-    pass
+    return f"un{word}"
 
 
 def make_word_groups(vocab_words):
