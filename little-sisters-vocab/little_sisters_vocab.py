@@ -26,14 +26,18 @@ def make_word_groups(vocab_words: list[str]) -> str:
     return f" :: {vocab_words[0]}".join(vocab_words)
 
 
-def remove_suffix_ness(word):
+def remove_suffix_ness(word: str) -> str:
     """Remove the suffix from the word while keeping spelling in mind.
     :param word: str - of word to remove suffix from.
     :return: str - of word with suffix removed & spelling adjusted.
 
     For example: "heaviness" becomes "heavy", but "sadness" becomes "sad".
     """
-    pass
+    without_suffix = word.removesuffix("ness")
+    if without_suffix[-1] == "i":
+        without_suffix = without_suffix[:-1] + "y"
+
+    return without_suffix
 
 
 def adjective_to_verb(sentence, index):
