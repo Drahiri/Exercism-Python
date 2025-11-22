@@ -1,4 +1,9 @@
-def is_isogram(string):
+def is_isogram(string: str) -> bool:
+    """Determines if sentence is isogram.
+
+    :param string: str - possible isogram.
+    :return: bool - is `string` isogram?
+    """
     # Sanitize string
     string = "".join(string.split())
     string = "".join(string.split("-"))
