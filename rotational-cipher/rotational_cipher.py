@@ -1,4 +1,9 @@
 def rotate(text: str, key: int) -> str:
+    """Encrypt text using rotational cipher by key.
+
+    :param text: str - text to encrypt.
+    :param key: int - how far transpose letter.
+    :return: str - encrypted text."""
     encrypted = []
     for c in text:
         if c.isalpha():
