@@ -1,5 +1,21 @@
-def encode(plain_text):
-    pass
+def encode(plain_text: str) -> str:
+    plain_text = plain_text.lower()
+    ciphered_text = []
+    space_index = 0
+
+    for c in plain_text:
+        if c.isnumeric():
+            ciphered_text.append(c)
+        elif c.isalpha():
+            ciphered_text.append(chr(-ord(c) + 219))  # 219 = 97 + 122
+        else:
+            continue
+
+        space_index += 1
+        if space_index % 5 == 0:
+            ciphered_text.append(" ")
+
+    return "".join(ciphered_text).strip()
 
 
 def decode(ciphered_text: str) -> str:
