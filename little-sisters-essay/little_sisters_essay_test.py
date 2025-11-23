@@ -73,7 +73,7 @@ class LittleSistersEssayTest(unittest.TestCase):
     @pytest.mark.task(taskno=3)
     def test_remove_extra_spaces(self):
         actual_result = clean_up_spacing("  Elephants can't jump.  ")
-        expected = "Elephants can't jump"
+        expected = "Elephants can't jump."
         error_message = (
             'Called clean_up_spacing("  Elephants can\'t jump.  "). '
             f'The function returned "{actual_result}", '
