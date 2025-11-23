@@ -7,7 +7,7 @@ def encode(plain_text: str) -> str:
         if c.isnumeric():
             ciphered_text.append(c)
         elif c.isalpha():
-            ciphered_text.append(chr(-ord(c) + 219))  # 219 = 97 + 122
+            ciphered_text.append(chr(219 - ord(c)))  # 219 = 97 + 122
         else:
             continue
 
@@ -26,6 +26,6 @@ def decode(ciphered_text: str) -> str:
         if c.isnumeric():
             plain_letters.append(c)
         else:
-            plain_letters.append(chr(122 + (97 - ord(c))))
+            plain_letters.append(chr(219 - ord(c)))
 
     return "".join(plain_letters)
