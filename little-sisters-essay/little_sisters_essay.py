@@ -10,13 +10,13 @@ def capitalize_title(title: str) -> str:
     return title.title()
 
 
-def check_sentence_ending(sentence):
+def check_sentence_ending(sentence: str) -> bool:
     """Check the ending of the sentence to verify that a period is present.
 
     :param sentence: str - a sentence to check.
     :return: bool - return True if punctuated correctly with period, False otherwise
     """
-    pass
+    return sentence.endswith(".")
 
 
 def clean_up_spacing(sentence):
