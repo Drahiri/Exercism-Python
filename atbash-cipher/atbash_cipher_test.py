@@ -17,7 +17,7 @@ class AtbashCipherTest(unittest.TestCase):
         self.assertEqual(encode("O M G"), "lnt")
 
     def test_encode_mindblowingly(self):
-        self.assertEqual(encode("mindblowingly"), "nrmwy pldrm tob")
+        self.assertEqual(encode("mindblowingly"), "nrmwy oldrm tob")
 
     def test_encode_numbers(self):
         self.assertEqual(encode("Testing,1 2 3, testing."), "gvhgr mt123 gvhgr mt")
@@ -28,7 +28,7 @@ class AtbashCipherTest(unittest.TestCase):
     def test_encode_all_letters(self):
         self.assertEqual(
             encode("The quick brown fox jumps over the lazy dog."),
-            "gsvjf rxpyi ldmul hlevi gsvoz abwlt",
+            "gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt",
         )
 
     def test_decode_exercism(self):
