@@ -112,7 +112,7 @@ class CardGamesTest(unittest.TestCase):
     @pytest.mark.task(taskno=4)
     def test_card_average(self):
         input_data = [[1], [5, 6, 7], [1, 2, 3, 4], [1, 10, 100]]
-        result_data = [[1.0, 6.0, 2.5, 37.0]]
+        result_data = [1.0, 6.0, 2.5, 37.0]
 
         for variant, (hand, expected) in enumerate(
             zip(input_data, result_data), start=1
