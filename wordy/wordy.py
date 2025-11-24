@@ -2,6 +2,7 @@ def answer(question: str) -> int:
     # Remove 'What is', 'by' and '?'
     question = question.removeprefix("What is ")
     question = question.removesuffix("?")
+    question = question.replace("by", "")
     words = question.split()
 
     if len(words) == 1:
