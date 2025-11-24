@@ -13,14 +13,15 @@ def get_rounds(number: int) -> list[int]:
     return [number, number + 1, number + 2]
 
 
-def concatenate_rounds(rounds_1, rounds_2):
+def concatenate_rounds(rounds_1: list[int], rounds_2: list[int]) -> list[int]:
     """Concatenate two lists of rounds.
 
     :param rounds_1: list - first rounds played.
     :param rounds_2: list - second set of rounds played.
     :retunr: list - all rounds played.
     """
-    pass
+    rounds_1.extend(rounds_2)
+    return rounds_1
 
 
 def list_contains_round(rounds, number):
