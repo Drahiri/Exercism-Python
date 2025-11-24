@@ -180,15 +180,15 @@ class CardGamesTest(unittest.TestCase):
     @pytest.mark.task(taskno=6)
     def test_maybe_double_last(self):
         input_data = [(1, 2, 11), (5, 9, 11), (5, 9, 10), (1, 2, 3), (1, 11, 8)]
-        result_data = [[1, 2, 11], [5, 9, 11], [5, 9, 10], [1, 2, 3], [1, 11, 8]]
+        result_data = [[1, 2, 22], [5, 9, 22], [5, 9, 10], [1, 2, 3], [1, 11, 8]]
 
         for variant, (hand, expected) in enumerate(
             zip(input_data, result_data), start=1
         ):
             with self.subTest(f"variation #{variant}", hand=hand, expected=expected):
-                actual_result = maybe_double_last(hand)
+                actual_result = maybe_double_last(list(hand))
                 error_message = (
-                    f"Called maybe_double_last({hand}). "
+                    f"Called maybe_double_last({list(hand)}). "
                     f"The function returned {actual_result}, "
                     f"but the tests expected rounds {expected} "
                     f"as the maybe-double_version of {list(hand)}."
