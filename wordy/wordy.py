@@ -6,4 +6,11 @@ def answer(question: str) -> int:
     if len(words) == 1:
         return int(words[0])
 
-    return 0
+    number1, operator, number2, *rest = words
+
+    result = 0
+    match operator:
+        case "plus":
+            result = int(number1) + int(number2)
+
+    return result
