@@ -4,13 +4,13 @@ Python lists documentation: https://docs.python.org/3/tutorial/datastructures.ht
 """
 
 
-def get_rounds(number):
+def get_rounds(number: int) -> list[int]:
     """Create a list containing the current and next two round numbers.
 
     :param number: int - current round number.
     :return: list - current round and the two that follows.
     """
-    pass
+    return [number, number + 1, number + 2]
 
 
 def concatenate_rounds(rounds_1, rounds_2):
