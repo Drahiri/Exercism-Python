@@ -12,5 +12,7 @@ def answer(question: str) -> int:
     match operator:
         case "plus":
             result = int(number1) + int(number2)
+        case "minus":
+            result = int(number1) - int(number2)
 
     return result
