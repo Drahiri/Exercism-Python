@@ -43,13 +43,16 @@ def card_average(hand: list[int]) -> float:
     return sum(hand) / len(hand)
 
 
-def approx_average_is_average(hand):
+def approx_average_is_average(hand: list[int]) -> bool:
     """Return if the (average of first and last card values) OR ('middle' card) == calculated average.
 
     :param hand: list - cards in hand.
-    :return: bool - are even and odd averages equal?
+    :return: bool - does one of the apprximate averages equal the 'true average'?
     """
-    pass
+    true_average = card_average(hand)
+    return (
+        true_average == (hand[0] + hand[-1]) / 2 or true_average == hand[len(hand) // 2]
+    )
 
 
 def average_even_is_average_odd(hand):
