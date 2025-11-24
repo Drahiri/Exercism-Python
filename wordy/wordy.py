@@ -1,4 +1,4 @@
-def answer(question: str) -> int:
+def answer(question: str) -> int | float:
     # Remove 'What is', 'by' and '?'
     question = question.removeprefix("What is ")
     question = question.removesuffix("?")
@@ -21,5 +21,7 @@ def answer(question: str) -> int:
             result = number1 - number2
         case "multiplied":
             result = number1 * number2
+        case "divided":
+            result = number1 / number2
 
     return result
