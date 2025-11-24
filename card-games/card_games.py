@@ -55,13 +55,15 @@ def approx_average_is_average(hand: list[int]) -> bool:
     )
 
 
-def average_even_is_average_odd(hand):
+def average_even_is_average_odd(hand: list[int]) -> bool:
     """Returns if the (average of even indexed card values) == (average of odd indexed card values).
 
     :param hand: list - cards in hand.
     :return: bool - are even and odd averages equal?
     """
-    pass
+    even_indexed = hand[::2]
+    odd_indexed = hand[1::2]
+    return sum(even_indexed) / len(even_indexed) == sum(odd_indexed) / len(odd_indexed)
 
 
 def maybe_double_last(hand):
