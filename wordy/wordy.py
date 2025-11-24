@@ -8,10 +8,6 @@ def answer(question: str) -> int | float:
     if not words:
         raise ValueError("syntax error")
 
-    if len(words) == 1:
-        return int(words[0])
-
-    result = 0
     while len(words) > 1:
         try:
             number1 = int(words[0])
@@ -19,19 +15,18 @@ def answer(question: str) -> int | float:
             operator = words[1]
             remaining = words[3:]
 
-            result = number1
             match operator:
                 case "plus":
-                    result += number2
+                    number1 += number2
                 case "minus":
-                    result -= number2
+                    number1 -= number2
                 case "multiplied":
-                    result *= number2
+                    number1 *= number2
                 case "divided":
-                    result /= number2
+                    number1 /= number2
 
-            words = [result, *remaining]
+            words = [number1, *remaining]
         except Exception:
             raise ValueError("syntax error")
 
-    return result
+    return int(words[0])
