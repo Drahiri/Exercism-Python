@@ -28,7 +28,7 @@ def answer(question: str) -> int | float:
                     result /= number2
 
             words = [result, *remaining]
-        except IndexError:
+        except Exception:
             raise ValueError("syntax error")
 
     return result
