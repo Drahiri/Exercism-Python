@@ -19,5 +19,7 @@ def answer(question: str) -> int:
             result = number1 + number2
         case "minus":
             result = number1 - number2
+        case "multiplied":
+            result = number1 * number2
 
     return result
