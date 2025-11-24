@@ -24,14 +24,14 @@ def concatenate_rounds(rounds_1: list[int], rounds_2: list[int]) -> list[int]:
     return rounds_1
 
 
-def list_contains_round(rounds, number):
+def list_contains_round(rounds: list[int], number: int) -> bool:
     """Check if the list of rounds contains the specified number.
 
     :param rounds: list - rounds played.
     :param number: int - round number.
     :return: bool - was the round played?
     """
-    pass
+    return number in rounds
 
 
 def card_average(hand):
