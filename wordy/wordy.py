@@ -13,15 +13,15 @@ def answer(question: str) -> int | float:
     operator = words[1]
     words = words[3:]
 
-    result = 0
+    result = number1
     match operator:
         case "plus":
-            result = number1 + number2
+            result += number2
         case "minus":
-            result = number1 - number2
+            result -= number2
         case "multiplied":
-            result = number1 * number2
+            result *= number2
         case "divided":
-            result = number1 / number2
+            result /= number2
 
     return result
