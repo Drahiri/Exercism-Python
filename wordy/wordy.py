@@ -6,13 +6,16 @@ def answer(question: str) -> int:
     if len(words) == 1:
         return int(words[0])
 
-    number1, operator, number2, *rest = words
+    number1 = int(words[0])
+    number2 = int(words[2])
+    operator = words[1]
+    words = words[3:]
 
     result = 0
     match operator:
         case "plus":
-            result = int(number1) + int(number2)
+            result = number1 + number2
         case "minus":
-            result = int(number1) - int(number2)
+            result = number1 - number2
 
     return result
