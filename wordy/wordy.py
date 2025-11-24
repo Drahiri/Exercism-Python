@@ -1,9 +1,12 @@
 def answer(question: str) -> int | float:
     # Remove 'What is', 'by' and '?'
-    question = question.removeprefix("What is ")
+    question = question.removeprefix("What is")
     question = question.removesuffix("?")
     question = question.replace("by", "")
     words = question.split()
+
+    if not words:
+        raise ValueError("syntax error")
 
     if len(words) == 1:
         return int(words[0])
