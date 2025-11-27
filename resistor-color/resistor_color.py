@@ -12,8 +12,8 @@ COLORS = [
 ]
 
 
-def color_code(color):
-    pass
+def color_code(color: str) -> int:
+    return COLORS.index(color)
 
 
 def colors():
