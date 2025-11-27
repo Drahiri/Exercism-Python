@@ -16,5 +16,5 @@ def color_code(color: str) -> int:
     return COLORS.index(color)
 
 
-def colors():
-    pass
+def colors() -> list[str]:
+    return COLORS
