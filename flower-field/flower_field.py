@@ -8,6 +8,11 @@ def update_fields(garden: list[list], row: int, column: int) -> None:
 
 
 def annotate(garden: list[str]) -> list[str]:
+    """Counts how many flowers (*) are adjacent to one field.
+
+    :param garden: list[str] - 2D list representing fields in garden with flowers.
+    :return: list[str] - alternated garden with count of flowers.
+    """
     if not garden:
         return []
 
