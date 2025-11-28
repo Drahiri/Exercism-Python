@@ -1,7 +1,12 @@
 """Functions to manage and organize queues at Chaitana's roller coaster."""
 
 
-def add_me_to_the_queue(express_queue, normal_queue, ticket_type, person_name):
+def add_me_to_the_queue(
+    express_queue: list[str],
+    normal_queue: list[str],
+    ticket_type: int,
+    person_name: str,
+) -> list[str]:
     """Add a person to the 'express' or 'normal' queue depending on the ticket number.
 
     :param express_queue: list - names in the Fast-track queue.
@@ -10,8 +15,15 @@ def add_me_to_the_queue(express_queue, normal_queue, ticket_type, person_name):
     :param person_name: str - name of person to add to a queue.
     :return: list - the (updated) queue the name was added to.
     """
+    match ticket_type:
+        case 0:
+            normal_queue.append(person_name)
+            return normal_queue
+        case 1:
+            express_queue.append(person_name)
+            return express_queue
 
-    pass
+    return [""]
 
 
 def find_my_friend(queue, friend_name):
