@@ -36,7 +36,7 @@ def find_my_friend(queue: list[str], friend_name: str) -> int:
     return queue.index(friend_name)
 
 
-def add_me_with_my_friends(queue, index, person_name):
+def add_me_with_my_friends(queue: list[str], index: int, person_name: str) -> list[str]:
     """Insert the late arrival's name at a specific index of the queue.
 
     :param queue: list - names in the queue.
@@ -44,8 +44,8 @@ def add_me_with_my_friends(queue, index, person_name):
     :param person_name: str - the name to add.
     :return: list - queue updated with new name.
     """
-
-    pass
+    queue.insert(index, person_name)
+    return queue
 
 
 def remove_the_mean_person(queue, person_name):
