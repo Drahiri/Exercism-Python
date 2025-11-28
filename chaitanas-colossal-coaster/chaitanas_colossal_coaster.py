@@ -48,15 +48,15 @@ def add_me_with_my_friends(queue: list[str], index: int, person_name: str) -> li
     return queue
 
 
-def remove_the_mean_person(queue, person_name):
+def remove_the_mean_person(queue: list[str], person_name: str) -> list[str]:
     """Remove the mean person from the queue by the provided name.
 
     :param queue: list - names in the queue.
     :param person_name: str - name of mean person.
     :return: list - queue update with the mean persons name removed.
     """
-
-    pass
+    queue.remove(person_name)
+    return queue
 
 
 def how_many_namefellows(queue, person_name):
