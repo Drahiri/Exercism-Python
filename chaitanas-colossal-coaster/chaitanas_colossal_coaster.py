@@ -26,15 +26,14 @@ def add_me_to_the_queue(
     return [""]
 
 
-def find_my_friend(queue, friend_name):
+def find_my_friend(queue: list[str], friend_name: str) -> int:
     """Search the queue for a name and return their queue position (index).
 
     :param queue: list - names in the queue.
     :param friend_name: str - name of friend to find.
     :return: int - index at which the friends name was found.
     """
-
-    pass
+    return queue.index(friend_name)
 
 
 def add_me_with_my_friends(queue, index, person_name):
