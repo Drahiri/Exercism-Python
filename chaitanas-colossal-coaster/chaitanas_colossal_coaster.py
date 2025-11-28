@@ -69,14 +69,13 @@ def how_many_namefellows(queue: list[str], person_name: str) -> int:
     return queue.count(person_name)
 
 
-def remove_the_last_person(queue):
+def remove_the_last_person(queue: list[str]) -> str:
     """Remove the person in the last index from the queue and return their name.
 
     :param queue: list - names in the queue.
     :return: str - name that has been removed from the end of the queue.
     """
-
-    pass
+    return queue.pop()
 
 
 def sorted_names(queue):
