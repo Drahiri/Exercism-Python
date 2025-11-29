@@ -15,6 +15,11 @@ METRIC = ["", "kilo", "mega", "giga"]
 
 
 def label(colors: list[str]) -> str:
+    """Changes bands colors into resistance text.
+
+    :param colors: list[str] - color bands on resistor.
+    :return: str - resistance with metric prefix.
+    """
     first_band = COLORS.index(colors[0])
     second_band = COLORS.index(colors[1])
     third_band = COLORS.index(colors[2])
