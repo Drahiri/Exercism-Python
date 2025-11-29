@@ -1,14 +1,14 @@
 COLORS = [
-    "black",  # 0
-    "brown",  # 0
-    "red",  # 1
-    "orange",  # 1
-    "yellow",  # 1
-    "green",  # 2
-    "blue",  # 2
-    "violet",  # 2
-    "grey",  # 3
-    "white",  # 3
+    "black",
+    "brown",
+    "red",
+    "orange",
+    "yellow",
+    "green",
+    "blue",
+    "violet",
+    "grey",
+    "white",
 ]
 
 METRIC = ["", "kilo", "mega", "giga"]
