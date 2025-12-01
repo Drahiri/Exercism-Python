@@ -25,5 +25,19 @@ def encode(numbers: list[int]) -> list[int]:
     return payload
 
 
-def decode(bytes_):
-    pass
+def decode(bytes_: list[int]) -> list[int]:
+    """Decoded variable length quantity into number.
+
+    :param bytes_: list[int] - list of bytes.
+    :return: list[int] - list of decoded numbers.
+    """
+    numbers = []
+    number = 0
+
+    for byte in bytes_:
+        number = (number << 7) + (byte & 0x7F)
+        if not (byte & 0x80):
+            numbers.append(number)
+            number = 0
+
+    return numbers
