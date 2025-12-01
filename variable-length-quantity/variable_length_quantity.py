@@ -33,11 +33,17 @@ def decode(bytes_: list[int]) -> list[int]:
     """
     numbers = []
     number = 0
+    used_bytes = 0  # Used to check if number is correctly encoded in bytes
 
     for byte in bytes_:
         number = (number << 7) + (byte & 0x7F)
+        used_bytes += 1
         if not (byte & 0x80):
             numbers.append(number)
             number = 0
+            used_bytes = 0
+
+    if used_bytes != 0:
+        raise ValueError("incomplete sequence")
 
     return numbers
