@@ -10,14 +10,18 @@ def round_scores(student_scores: list[float]) -> list[int]:
     return [round(score) for score in student_scores]
 
 
-def count_failed_students(student_scores):
+def count_failed_students(student_scores: list[int]) -> int:
     """Count the number of failing students out of the group provided.
 
     :param student_scores: list - containing int student scores.
     :return: int - count of student scores at or below 40.
     """
+    failing = 0
+    for score in student_scores:
+        if score <= 40:
+            failing += 1
 
-    pass
+    return failing
 
 
 def above_threshold(student_scores, threshold):
