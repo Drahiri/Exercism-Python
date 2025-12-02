@@ -39,7 +39,7 @@ def above_threshold(student_scores: list[int], threshold: int) -> list[int]:
     return top_scores
 
 
-def letter_grades(highest):
+def letter_grades(highest: int) -> list[int]:
     """Create a list of grade thresholds based on the provided highest grade.
 
     :param highest: int - value of highest exam score.
@@ -52,8 +52,12 @@ def letter_grades(highest):
             71 <= "B" <= 85
             86 <= "A" <= 100
     """
+    interval = (highest - 40) // 4
+    scores = [41]
+    for i in range(3):
+        scores.append(scores[i] + interval)
 
-    pass
+    return scores
 
 
 def student_ranking(student_scores, student_names):
