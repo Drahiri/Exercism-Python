@@ -60,15 +60,17 @@ def letter_grades(highest: int) -> list[int]:
     return scores
 
 
-def student_ranking(student_scores, student_names):
+def student_ranking(student_scores: list[int], student_names: list[str]) -> list[str]:
     """Organize the student's rank, name, and grade information in descending order.
 
     :param student_scores: list - of scores in descending order.
     :param student_names: list - of string names by exam score in descending order.
     :return: list - of strings in format ["<rank>. <student name>: <score>"].
     """
-
-    pass
+    return [
+        f"{i + 1}. {student_name}: {student_scores[i]}"
+        for i, student_name in enumerate(student_names)
+    ]
 
 
 def perfect_score(student_info):
